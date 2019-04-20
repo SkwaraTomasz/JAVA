@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="28.0" prefWidth="398.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" style="-fx-background-color: pink;" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" style="-fx-background-color: pink;" text="About">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#about" text="Show" />
+                     </items></Menu>
+              </menus>
+               <effect>
+                  <Reflection />
+               </effect>
+            </MenuBar>
+         </top>
+         <bottom>
+            <GridPane prefHeight="373.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="152.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="0.0" prefWidth="12.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="148.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.0" minWidth="4.0" prefWidth="9.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" prefWidth="147.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" prefWidth="20.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="120.0" minHeight="0.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="299.0" minHeight="10.0" prefHeight="244.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="72.0" minHeight="8.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addNewTaskWindow" prefHeight="30.0" prefWidth="149.0" style="-fx-background-color: grey;" text="Add new Task!" textFill="WHITE" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <TitledPane prefHeight="280.0" prefWidth="150.0" style="-fx-border-color: pink; -fx-background-color: pink;" text="TO DO" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <content>
+                        <ScrollPane prefHeight="237.0" prefWidth="132.0">
+                           <content>
+                              <ListView fx:id="toDo" prefHeight="219.0" prefWidth="155.0" />
+                           </content>
+                        </ScrollPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane prefHeight="280.0" prefWidth="150.0" style="-fx-border-color: pink; -fx-background-color: pink;" text="IN PROGRESS" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <content>
+                        <ScrollPane prefHeight="244.0" prefWidth="132.0">
+                           <content>
+                              <ListView fx:id="inProgress" prefHeight="216.0" prefWidth="145.0" />
+                           </content>
+                        </ScrollPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane prefHeight="280.0" prefWidth="150.0" style="-fx-border-color: pink; -fx-background-color: pink;" text="DONE" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <content>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <ListView fx:id="done" prefHeight="218.0" prefWidth="143.0" />
+                           </content>
+                        </ScrollPane>
+                     </content>
+                  </TitledPane>
+                  <Button fx:id="moveRightToDo" mnemonicParsing="false" prefHeight="35.0" prefWidth="50.0" text="MOVE RIGHT" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="90.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="moveLefttInProgr" mnemonicParsing="false" prefHeight="33.0" prefWidth="50.0" text="MOVE LEFT" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="moveRightInProgr" layoutX="118.0" layoutY="295.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="50.0" text="MOVE RIGHT" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="90.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="moveLeftDone" layoutX="200.0" layoutY="296.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="50.0" text="MOVE LEFT" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
